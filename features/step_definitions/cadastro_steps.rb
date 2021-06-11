@@ -3,7 +3,6 @@
   Dado('que acesso a página de cadastro') do
     visit "http://rocklov-web:3000/signup"
   end
-  
 
   Quando('submeto o seguinte formulário de cadastro:') do |table|
 
@@ -18,32 +17,8 @@
     click_button "Cadastrar"
   end
   
-  
   Então('sou redirecionado para o Dashboard') do
     expect(page).to have_css ".dashboard"
-  end
-
-  Quando('submeto o meu cadastro sem o nome') do
-    find("#email").set Faker::Internet.free_email
-    find("#password").set "abc123"
-    click_button "Cadastrar"
-  end
-  
-
-  Quando('submeto o meu cadastro sem o email') do
-    find("#fullName").set "Giovana"
-    find("#password").set "abc123"
-
-    click_button "Cadastrar"
-  end
-  
-
-  Quando('submeto o meu cadastro com email incorreto') do
-    find("#fullName").set "Giovana"
-    find("#email").set "giovana#hotmail.com"
-    find("#password").set "abc123"
-
-    click_button "Cadastrar"
   end
 
   Quando('submeto o meu cadastro sem a senha') do
