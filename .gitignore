@@ -1,3 +1,4 @@
 Gemfile
 Gemfile.lock
 comandos.txt
+logs/mongo.log

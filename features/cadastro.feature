@@ -9,7 +9,9 @@ Para que eu possa disponibilizá-los para locação
     Cenario: Fazer cadastro
 
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro completo
+        Quando submeto o seguinte formulário de cadastro:
+            |nome   |email                 |senha |
+            |Giovana|gopalhares@hotmail.com|123456|
         Então sou redirecionado para o Dashboard
 
     @tentativa_cadastro

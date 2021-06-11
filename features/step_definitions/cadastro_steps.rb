@@ -4,17 +4,20 @@
     visit "http://rocklov-web:3000/signup"
   end
   
-  Quando('submeto o meu cadastro completo') do
 
-    Mongodb.new.remove_user("gopalhares@hotmail.com")
+  Quando('submeto o seguinte formulário de cadastro:') do |table|
 
-    find("#fullName").set "Giovana"
-    find("#email").set "gopalhares@hotmail.com"
-    find("#password").set "abc123"
+    user = table.hashes.first
+
+    Mongodb.new.remove_user(user[:email])
+
+    find("#fullName").set user[:nome]
+    find("#email").set user[:email]
+    find("#password").set user[:senha]
 
     click_button "Cadastrar"
-   
   end
+  
   
   Então('sou redirecionado para o Dashboard') do
     expect(page).to have_css ".dashboard"
@@ -50,9 +53,10 @@
     click_button "Cadastrar"
   end
   
-
   Então('vejo a mensagem de alerta: {string}') do |expect_alert|
     alert = find(".alert-dark")
     expect(alert.text).to eql expect_alert
   end
+
+  
   
