@@ -119,3 +119,13 @@ D, [2021-06-11T19:49:03.478064 #8678] DEBUG -- : MONGODB | rocklov-db:27017 req:
 D, [2021-06-11T19:49:03.478325 #8678] DEBUG -- : MONGODB | rocklov-db:27017 req:27 | admin.endSessions | SUCCEEDED | 0.000s
 D, [2021-06-11T19:49:03.479734 #8678] DEBUG -- : MONGODB | rocklov-db:27017 req:29 conn:1:2 sconn:37 | admin.endSessions | STARTED | {"endSessions"=>[{"id"=><BSON::Binary:0x46971675334980 type=uuid data=0xe12ecf05e8b7465a...>}], "$db"=>"admin"}
 D, [2021-06-11T19:49:03.479947 #8678] DEBUG -- : MONGODB | rocklov-db:27017 req:29 | admin.endSessions | SUCCEEDED | 0.000s
+D, [2021-06-16T18:46:06.139380 #26633] DEBUG -- : MONGODB | Topology type 'unknown' initializing.
+D, [2021-06-16T18:46:06.140103 #26633] DEBUG -- : MONGODB | There was a change in the members of the 'Unknown' topology.
+D, [2021-06-16T18:46:06.140346 #26633] DEBUG -- : MONGODB | Server rocklov-db:27017 initializing.
+D, [2021-06-16T18:46:06.140586 #26633] DEBUG -- : MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[rocklov-db:27017] servers=[#<Server address=rocklov-db:27017 UNKNOWN>]>
+D, [2021-06-16T18:46:06.143211 #26633] DEBUG -- : MONGODB | Server description for rocklov-db:27017 changed from 'unknown' to 'standalone'.
+D, [2021-06-16T18:46:06.143832 #26633] DEBUG -- : MONGODB | Topology type 'Unknown' changed to type 'Single'.
+D, [2021-06-16T18:46:06.148083 #26633] DEBUG -- : MONGODB | rocklov-db:27017 req:7 conn:1:1 sconn:3 | rocklov.delete | STARTED | {"delete"=>"users", "ordered"=>true, "deletes"=>[{"q"=>{"email"=>"gopalhares@hotmail.com"}, "limit"=>0}], "$db"=>"rocklov", "lsid"=>{"id"=><BSON::Binary:0x46970634441500 type=uuid data=0xdf04c7633ff24608...>}}
+D, [2021-06-16T18:46:06.148934 #26633] DEBUG -- : MONGODB | rocklov-db:27017 req:7 | rocklov.delete | SUCCEEDED | 0.001s
+D, [2021-06-16T18:46:06.680015 #26633] DEBUG -- : MONGODB | rocklov-db:27017 req:9 conn:1:2 sconn:5 | admin.endSessions | STARTED | {"endSessions"=>[{"id"=><BSON::Binary:0x46970634441500 type=uuid data=0xdf04c7633ff24608...>}], "$db"=>"admin"}
+D, [2021-06-16T18:46:06.680261 #26633] DEBUG -- : MONGODB | rocklov-db:27017 req:9 | admin.endSessions | SUCCEEDED | 0.000s
