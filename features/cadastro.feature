@@ -11,7 +11,7 @@ Funcionalidade: Cadastro
         Dado que acesso a página de cadastro
         Quando submeto o seguinte formulário de cadastro:
             | nome    | email                  | senha  |
-            | Giovana | gopalhares@hotmail.com | 123456 |
+            | Giovana | gopalhares2@hotmail.com | 123456 |
         Então sou redirecionado para o Dashboard
 
     Esquema do Cenario: Tentativa de Cadastro
