@@ -4,8 +4,8 @@ Funcionalidade: Login
     Sendo um usuário cadastrado
     Quero acessar o sistema
     Para alugar meus equipamentos musicais
-
-    @login
+    
+    
     Cenario: Login do usuario
 
         Dado que acesso a página principal
@@ -15,18 +15,18 @@ Funcionalidade: Login
     Cenario: Senha incorreta
 
         Dado que acesso a página principal
-        Quando submeto minhas credenciais com senha incorreta
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos
+        Quando submeto minhas credenciais com "gopalhares@hotmail.com" e "0000"
+        Então vejo a mensagem de alerta: "Usuário e/ou senha inválidos."
 
     Cenario: Email não cadastrado
 
         Dado que acesso a página principal
-        Quando submeto minhas credenciais com email que não existe na Rocklov
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos
+        Quando submeto minhas credenciais com "teste@hotmail.com" e "0000"
+        Então vejo a mensagem de alerta: "Usuário e/ou senha inválidos."
 
     Cenario: Email incorreto
 
         Dado que acesso a página principal
-        Quando submeto minhas credenciais com email incorreto
-        Então vejo a mensagem de alerta: Oops. Informe um email válido!#language: pt
+        Quando submeto minhas credenciais com "gopalhares2hotmail.com" e "0000"
+        Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
