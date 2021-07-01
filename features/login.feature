@@ -5,7 +5,7 @@ Funcionalidade: Login
     Quero acessar o sistema
     Para alugar meus equipamentos musicais
 
-
+    
     Cenario: Login do usuario
 
         Dado que acesso a página principal

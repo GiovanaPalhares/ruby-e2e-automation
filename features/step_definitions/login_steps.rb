@@ -1,11 +1,13 @@
 Dado('que acesso a página principal') do
-    visit "/"
+    login = Login.new
+    login.abrir
 end
   
 Quando('submeto minhas credenciais com {string} e {string}') do |string, string2|
-    find("#email").set string 
-    find("#password").set string2
+    login = Login.new 
+    login.email_field.set string 
+    login.password_field.set string2
     
-    click_button "Entrar"
+    login.entrar
 end
 
