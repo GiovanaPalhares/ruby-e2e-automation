@@ -1,10 +1,11 @@
 Dado('que estou logado no Rocklov com {string} e {string}') do |string, string2|
     @email = string
-    visit "/"
-    find("#email").set string 
-    find("#password").set string2
-    
-    click_button "Entrar"
+    @login = Login.new
+    @login.abrir
+    @login.email_field.set string
+    @login.password_field.set string2
+
+    @login.entrar
 end
   
 Dado('acesso a página de criar anúncio') do

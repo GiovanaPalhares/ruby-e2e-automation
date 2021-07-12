@@ -1,4 +1,6 @@
 Então('sou redirecionado para o Dashboard') do
+    sleep 10
+
     expect(page).to have_css ".dashboard"
 end
 

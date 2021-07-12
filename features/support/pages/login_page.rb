@@ -6,14 +6,14 @@ class Login
     end
 
     def email_field
-        return find("#email")
+        return find("#user_email")
     end
 
     def password_field
-        return find("#password")
+        return find("#user_password")
     end
 
-    def entrarg
+    def entrar
         click_button "Entrar"
     end
 
