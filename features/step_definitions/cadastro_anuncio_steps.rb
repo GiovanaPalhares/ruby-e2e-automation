@@ -17,7 +17,6 @@ Dado('que eu tenho o seguinte equipamento:') do |table|
     @anuncio = table.rows_hash
 
     Mongodb.new.remove_equipo(@anuncio[:nome], @email)
-
 end
   
 Quando('submeto o cadastro desse item') do
@@ -30,7 +29,6 @@ Quando('submeto o cadastro desse item') do
     find("#price").set @anuncio[:preco]
 
     click_button "Cadastrar"
-
 end
   
 Então('devo ver esse item no meu Dashboard') do
