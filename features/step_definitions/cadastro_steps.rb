@@ -8,11 +8,7 @@
 
     Mongodb.new.remove_user(user[:email])
 
-    @cadastro.cadastro_nome.set user[:nome]
-    @cadastro.cadastro_email.set user[:email]
-    @cadastro.cadastro_password.set user[:senha]
-
-    @cadastro.cadastro_button
+    @cadastro.cadastrar(user)
   end
   
   Quando('submeto o meu cadastro sem a senha') do

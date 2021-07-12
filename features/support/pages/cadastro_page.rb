@@ -21,4 +21,11 @@ class Cadastro
         click_button "Cadastrar"
     end
 
+    def cadastrar(user)
+        cadastro_nome.set user[:nome]
+        cadastro_email.set user[:email]
+        cadastro_password.set user[:senha]
+        click_button "Cadastrar"
+    end
+
 end
