@@ -1,6 +1,5 @@
 Dado('que estou logado no Rocklov com {string} e {string}') do |string, string2|
     @email = string
-    @login = Login.new
     @login.abrir
     @login.email_field.set string
     @login.password_field.set string2

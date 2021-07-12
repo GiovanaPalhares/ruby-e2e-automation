@@ -1,7 +1,5 @@
 
-
   Dado('que acesso a página de cadastro') do
-    @cadastro = Cadastro.new
     @cadastro.cadastro_page
   end
 
