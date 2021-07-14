@@ -8,8 +8,7 @@ Dado('que estou logado no Rocklov com {string} e {string}') do |string, string2|
 end
   
 Dado('acesso a página de criar anúncio') do
-    click_button "Criar anúncio"
-    expect(page).to have_css "#equipoForm"
+    @dash.criar_anuncio
 end
 
 Dado('que eu tenho o seguinte equipamento:') do |table|
@@ -19,19 +18,11 @@ Dado('que eu tenho o seguinte equipamento:') do |table|
 end
   
 Quando('submeto o cadastro desse item') do
-
-    image = Dir.pwd + '/features/support/images/' + @anuncio[:imagem]
-
-    find("#thumbnail input[type=file]", visible: false).set image
-    find("input[placeholder$='equipamento']").set @anuncio[:nome]
-    find("#category").find('option', text: @anuncio[:categoria]).select_option
-    find("#price").set @anuncio[:preco]
-
-    click_button "Cadastrar"
+    @equipamentos.submeter_cadastro_anuncio(@anuncio)
 end
   
 Então('devo ver esse item no meu Dashboard') do
-    anuncios = find(".equipo-list")
+    anuncios = @dash.equipo_list
     expect(anuncios).to have_content @anuncio[:nome]
     expect(anuncios).to have_content "R$#{@anuncio[:preco]}/dia"
 end
