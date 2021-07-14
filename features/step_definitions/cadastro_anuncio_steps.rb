@@ -1,12 +1,12 @@
-Dado('que estou logado no Rocklov com {string} e {string}') do |string, string2|
-    @email = string
+Dado('Login com {string} e {string}') do |email, senha|
+    @email = email
     @login.abrir
-    @login.email_field.set string
-    @login.password_field.set string2
+    @login.email_field.set email
+    @login.password_field.set senha
 
     @login.entrar
 end
-  
+
 Dado('acesso a página de criar anúncio') do
     @dash.criar_anuncio
 end

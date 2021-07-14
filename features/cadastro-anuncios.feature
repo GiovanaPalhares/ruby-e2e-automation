@@ -5,11 +5,13 @@ Funcionalidade: Cadastro de equipamento
     Quero cadastrar meus equipamentos
     Para que eu possa disponibilizar para locação
 
+    Contexto:
+        * Login com "giovana@hotmail.com" e "123456"
+
     @novo
     Cenario: Novo equipamento
 
-        Dado que estou logado no Rocklov com "giovana@hotmail.com" e "123456"
-        E acesso a página de criar anúncio
+        Dado acesso a página de criar anúncio
         E que eu tenho o seguinte equipamento:
             | imagem    | baixo.jpg |
             | nome      | Baixo     |
