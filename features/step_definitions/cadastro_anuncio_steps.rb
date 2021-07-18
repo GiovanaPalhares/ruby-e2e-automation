@@ -26,3 +26,8 @@ Então('devo ver esse item no meu Dashboard') do
     expect(anuncios).to have_content @anuncio[:nome]
     expect(anuncios).to have_content "R$#{@anuncio[:preco]}/dia"
 end
+
+Então('é exibido uma mensagem com o texto: {string}') do |string|
+    expect(@alert.dark).to include(string)
+end
+  
