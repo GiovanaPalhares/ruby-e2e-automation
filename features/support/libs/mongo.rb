@@ -20,11 +20,10 @@ class Mongodb
 
     def remove_equipo(name, email)
         user_id = get_user(email)
-        client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
+        client = Mongo::Client.new(CONFIG["mongo"])
         equipos = client[:equipos]
         equipos.delete_many({name: name, user: user_id})
     end
-
 
 end
 
