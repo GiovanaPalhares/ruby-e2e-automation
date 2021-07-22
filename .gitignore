@@ -2,3 +2,5 @@ Gemfile
 Gemfile.lock
 comandos.txt
 logs/mongo.log
+logs
+cucumber.yml
