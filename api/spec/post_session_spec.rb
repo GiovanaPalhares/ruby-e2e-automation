@@ -3,7 +3,8 @@ require_relative 'routes/sessions'
 describe "POST/sessions" do 
     context "login com sucesso" do 
         before(:all) do
-            @result = Sessions.new.login("giovana@hotmail.com", "123456")
+            payload = {email: "giovana@hotmail.com", password: "123456"}
+            @result = Sessions.new.login(payload)
         end
 
         it "status code 200" do
@@ -15,17 +16,46 @@ describe "POST/sessions" do
         end
     end
 
-    context "login com senha invalida" do 
-        before(:all) do
-            @result = Sessions.new.login("giovana@hotmail.com", "648961651651561")
+    examples = [
+        {
+            payload: { email: "giovana@hotmail.com", password: "648961651651561" },
+            code: 401,
+            response: "Unauthorized"
+        },
+        {
+            payload: { email: "nao_existe@hotmail.com", password: "123456" },
+            code: 401,
+            response: "Unauthorized"
+        },
+        {
+            payload: { email: "", password: "123456" },
+            code: 412,
+            response: "required email"
+        },
+        {
+            payload: { email: "giovana@hotmail.com", password: "" },
+            code: 412,
+            response: "required password"
+        }
+    ]
+
+    examples.each do |e|
+
+        context "login com senha invalida" do 
+            before(:all) do
+                @result = Sessions.new.login(e[:payload])
+            end
+    
+            it "status code 401" do
+                expect(@result.code).to eql e[:code]
+            end
+    
+            it "id com 24 caracteres" do
+                expect(@result.parsed_response["error"]).to eql e[:response]
+            end
         end
 
-        it "status code 401" do
-            expect(@result.code).to eql 401
-        end
-
-        it "id com 24 caracteres" do
-            expect(@result.parsed_response["error"]).to eql "Unauthorized"
-        end
     end
+
+
 end
