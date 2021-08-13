@@ -18,21 +18,25 @@ describe "POST/sessions" do
 
     examples = [
         {
+            nome: "senha inválida",
             payload: { email: "giovana@hotmail.com", password: "648961651651561" },
             code: 401,
             response: "Unauthorized"
         },
         {
+            nome: "e-mail não existe",
             payload: { email: "nao_existe@hotmail.com", password: "123456" },
             code: 401,
             response: "Unauthorized"
         },
         {
+            nome: "não informar e-mail",
             payload: { email: "", password: "123456" },
             code: 412,
             response: "required email"
         },
         {
+            nome: "não informar senha",
             payload: { email: "giovana@hotmail.com", password: "" },
             code: 412,
             response: "required password"
@@ -41,16 +45,16 @@ describe "POST/sessions" do
 
     examples.each do |e|
 
-        context "login com senha invalida" do 
+        context e[:nome] do 
             before(:all) do
                 @result = Sessions.new.login(e[:payload])
             end
     
-            it "status code 401" do
+            it "status code #{e[:code]}" do
                 expect(@result.code).to eql e[:code]
             end
     
-            it "id com 24 caracteres" do
+            it "valida id do usuário" do
                 expect(@result.parsed_response["error"]).to eql e[:response]
             end
         end
