@@ -66,5 +66,4 @@ describe "POST/sessions" do
 
     end
 
-
 end
