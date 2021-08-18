@@ -1,8 +1,6 @@
-require "httparty"
+require_relative "base_api"
 
-class Signup_sessions 
-    include HTTParty
-    base_uri "http://rocklov-api:3333"
+class Signup_sessions < Base_api
 
     def sign_up(payload)
         return self.class.post(
@@ -13,5 +11,5 @@ class Signup_sessions
             }
         ) 
     end
-
+    
 end
