@@ -38,4 +38,33 @@ describe "signup sessions" do
 
         end
     end
+
+    context "não informar dados obrigatórios" do
+        before(:all) do
+            @payload = [
+                {name: "", email: "joao@hotmail.com", password: "123456"},
+                {name: "joao", email: "", password: "123456"},
+                {name: "joao", email: "", password: ""}
+             ]
+            
+        end
+
+        it "não informar nome - status code 412" do
+            cadastrar = Signup_sessions.new.sign_up(@payload[0])
+            expect(cadastrar.code).to eql 412
+            expect(cadastrar.parsed_response["error"]).to eql "required name"
+        end
+
+        it "não informar email - status code 412" do
+             cadastrar = Signup_sessions.new.sign_up(@payload[1])
+             expect(cadastrar.code).to eql 412
+             expect(cadastrar.parsed_response["error"]).to eql "required email"
+        end
+        
+        it "não informar senha - status code 412" do
+            cadastrar = Signup_sessions.new.sign_up(@payload[1])
+            expect(cadastrar.code).to eql 412
+            expect(cadastrar.parsed_response["error"]).to eql "required email"
+       end
+    end
 end
