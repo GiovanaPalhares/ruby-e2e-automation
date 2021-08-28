@@ -45,8 +45,7 @@ describe "signup sessions" do
                 {name: "", email: "joao@hotmail.com", password: "123456"},
                 {name: "joao", email: "", password: "123456"},
                 {name: "joao", email: "", password: ""}
-             ]
-            
+             ]       
         end
 
         it "não informar nome - status code 412" do
