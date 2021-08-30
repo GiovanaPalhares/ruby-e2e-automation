@@ -1,6 +1,3 @@
-require_relative 'routes/signup_sessions'
-require_relative 'libs/mongo'
-
 describe "signup sessions" do
 
     context "cadastro de usuário com sucesso" do 

@@ -1,7 +1,4 @@
-require_relative 'routes/post_equipos'
-require_relative 'routes/sessions'
-require_relative 'libs/mongo'
-
+# os arquivos require_relative estão no spec_helper
 
 describe "post equipo" do
 

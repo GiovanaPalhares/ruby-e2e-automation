@@ -1,3 +1,11 @@
+## ao invés de passar em cada arquivo spec a rota das APIs que serão utilizadas, coloca todos os caminhos aqui pois esse arquivo roda antes de todos os specs, então já pega a rota automaticamente
+
+require_relative 'routes/post_equipos'
+require_relative 'routes/sessions'
+require_relative 'libs/mongo'
+require_relative 'helpers'
+require_relative 'routes/signup_sessions'
+
 
 RSpec.configure do |config|
   
