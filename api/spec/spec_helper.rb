@@ -8,6 +8,7 @@ require_relative 'routes/signup_sessions'
 require_relative 'routes/get_equipos_session.rb'
 
 
+
 RSpec.configure do |config|
   
   config.expect_with :rspec do |expectations|
