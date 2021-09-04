@@ -7,7 +7,7 @@ describe "get unique equipo" do
         puts @user_id
     end
 
-    context "obter equipamento" do 
+    context "obter equipamento pelo id" do 
 
         before(:all) do 
             thumbnail = Helpers::get_thumb("sanfona.jpg")
@@ -19,16 +19,24 @@ describe "get unique equipo" do
             @response = Get_equipo.new.get_unique_equipo(equipo_id, @user_id)
         end
 
-        
         it "deve retornar 200" do
             expect(@response.code).to eql 200
         end
     
         it "validar nome do equipo" do
-            expect(@response.parsed_response).to include("name" => @payload[:name])
-
-             
+            expect(@response.parsed_response).to include("name" => @payload[:name])      
         end
+    end
+
+    context "equipo_id invalido" do 
+        before(:all) do 
+            @response = Get_equipo.new.get_unique_equipo(Mongodb.new.cria_equipo_id, @user_id)
+        end
+
+        it "deve retornar 404" do
+           expect(@response.code).to eql 404 
+        end
+        
     end
 
 end

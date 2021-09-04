@@ -17,5 +17,9 @@ class Mongodb
         equipos.delete_many({name: name, user: obj_id}) 
     end
 
+    def cria_equipo_id 
+        return BSON::ObjectId.new
+    end
+
 end
 
