@@ -7,7 +7,7 @@ require_relative 'helpers'
 require_relative 'routes/signup_sessions'
 require_relative 'routes/get_equipos_session.rb'
 require_relative 'routes/delete_equipo'
-
+require_relative 'routes/booking_equipo'
 
 
 RSpec.configure do |config|
