@@ -1,6 +1,6 @@
 # Projeto desenvolvido durante curso de automação de testes *Automação 180*
 
-Testes automatizados do sistema web *rocklov* e das APIs do sistema
+Testes automatizados do sistema web *rocklov* e de suas APIs
 
 
 ### Tecnologias utilizadas
@@ -18,7 +18,7 @@ Testes automatizados do sistema web *rocklov* e das APIs do sistema
 ### Configurações
 
 
- ##### Preparando o ambiente 
+ ##### Preparar o ambiente
 Clonar o repositório do projeto
 
 ```sh
@@ -30,20 +30,18 @@ Com o docker-compose instalado, rodar o comando na pasta da versão que deseja t
 ```sh
 docker-compose up -d
 ```
-##### Acessando o sistema
+##### Acessar o sistema
 - [web](http://rocklov-web:3000/)
 - [swagger](http://rocklov-api:3333/api-docs#/)
 
 
 ## Execução dos testes web
 - Acesse a pasta *web* 
-- Execute o comando:
 ```sh
 cucumber /features
 ```
 ## Execução dos testes API
 - Acesse a pasta *api* 
-- Execute o comando:
 ```sh
 rspec
 ```
