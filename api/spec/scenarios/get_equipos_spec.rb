@@ -17,15 +17,15 @@ describe "get_equipo" do
                 },
                 { 
                     thumbnail: Helpers::get_thumb("trompete.jpg"),
-                    name: "Guitarra",
+                    name: "Baixo",
                     category: "Cordas",
                     price: 100 
                 },
                 { 
                     thumbnail: Helpers::get_thumb("slash.jpg"),
-                    name: "Guitarra",
+                    name: "Violao",
                     category: "Cordas",
-                    price: 100 
+                    price: 500 
                 }
             ]
 
@@ -41,9 +41,9 @@ describe "get_equipo" do
             expect(@get_equipo.code).to eql 200
         end 
 
-        it "deve retornar uma lista de equipos" do  
-            expect(@get_equipo.parsed_response).not_to be_empty    
-        end
+        # it "deve retornar uma lista de equipos" do  
+        #     expect(@get_equipo.parsed_response).not_to be_empty    
+        # end
     end
 
 end

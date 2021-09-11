@@ -4,7 +4,6 @@ describe "get unique equipo" do
         login_payload = { email: "giovana@hotmail.com", password: "123456" }
         login = Sessions.new.login(login_payload)
         @user_id = login.parsed_response["_id"]  
-        puts @user_id
     end
 
     context "obter equipamento pelo id" do 

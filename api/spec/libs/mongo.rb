@@ -6,8 +6,19 @@ class Mongodb
 
     def remove_user(email)
         client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
+        @users = client[:users]
+        @users.delete_many({email: email})
+    end
+
+    def drop_table
+        client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
+        client.database.drop
+    end
+
+    def insert_users(docs)
+        client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
         users = client[:users]
-        users.delete_many({email: email})
+        users.insert_many(docs)
     end
 
     def remove_equipo(name, user_id)
