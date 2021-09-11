@@ -1,4 +1,6 @@
 require "httparty"
+require "pry"
+require "pry-byebug"
 
 class Base_api
     include HTTParty
