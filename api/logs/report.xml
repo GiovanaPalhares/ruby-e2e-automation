@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="28" skipped="0" failures="0" errors="0" time="0.401555" timestamp="2021-09-20T18:55:11-03:00" hostname="ni-tqi002881">
+<properties>
+<property name="seed" value="39970"/>
+</properties>
+<testcase classname="spec.scenarios.delete_equipos_spec" name="delete equipo deletar equipo deve retornar 204" file="./spec/scenarios/delete_equipos_spec.rb" time="0.000827"></testcase>
+<testcase classname="spec.scenarios.get_equipos_spec" name="get_equipo obter equipos de usuário deve retornar 200" file="./spec/scenarios/get_equipos_spec.rb" time="0.000147"></testcase>
+<testcase classname="spec.scenarios.get_unique_equipo_spec" name="get unique equipo obter equipamento pelo id deve retornar 200" file="./spec/scenarios/get_unique_equipo_spec.rb" time="0.000287"></testcase>
+<testcase classname="spec.scenarios.get_unique_equipo_spec" name="get unique equipo obter equipamento pelo id validar nome do equipo" file="./spec/scenarios/get_unique_equipo_spec.rb" time="0.003537"></testcase>
+<testcase classname="spec.scenarios.get_unique_equipo_spec" name="get unique equipo equipo_id invalido deve retornar 404" file="./spec/scenarios/get_unique_equipo_spec.rb" time="0.000140"></testcase>
+<testcase classname="spec.scenarios.post_booking_equipo_spec" name="/equipos/{equipo_id}/bookings booking equipo deve retornar 200" file="./spec/scenarios/post_booking_equipo_spec.rb" time="0.000142"></testcase>
+<testcase classname="spec.scenarios.post_equipo_spec" name="post equipo cadastrar equipamento com sucesso cadastro com sucesso deve retornar 200" file="./spec/scenarios/post_equipo_spec.rb" time="0.000155"></testcase>
+<testcase classname="spec.scenarios.post_equipo_spec" name="post equipo não informar dados obrigatórios não deve ser possível realizar cadastro sem imagem - erro 412" file="./spec/scenarios/post_equipo_spec.rb" time="0.002817"></testcase>
+<testcase classname="spec.scenarios.post_equipo_spec" name="post equipo não informar dados obrigatórios não deve ser possível realizar cadastro sem nome - erro 412" file="./spec/scenarios/post_equipo_spec.rb" time="0.010640"></testcase>
+<testcase classname="spec.scenarios.post_equipo_spec" name="post equipo não informar dados obrigatórios não deve ser possível realizar cadastro sem categoria - erro 412" file="./spec/scenarios/post_equipo_spec.rb" time="0.007960"></testcase>
+<testcase classname="spec.scenarios.post_equipo_spec" name="post equipo não informar dados obrigatórios não deve ser possível realizar cadastro sem autorização" file="./spec/scenarios/post_equipo_spec.rb" time="0.007145"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions login com sucesso status code 200" file="./spec/scenarios/post_session_spec.rb" time="0.000149"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions login com sucesso id com 24 caracteres" file="./spec/scenarios/post_session_spec.rb" time="0.000206"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions senha inválida status code 401" file="./spec/scenarios/post_session_spec.rb" time="0.000137"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions senha inválida valida id do usuário" file="./spec/scenarios/post_session_spec.rb" time="0.000217"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions e-mail não existe status code 401" file="./spec/scenarios/post_session_spec.rb" time="0.000166"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions e-mail não existe valida id do usuário" file="./spec/scenarios/post_session_spec.rb" time="0.000228"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions não informar e-mail status code 412" file="./spec/scenarios/post_session_spec.rb" time="0.000136"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions não informar e-mail valida id do usuário" file="./spec/scenarios/post_session_spec.rb" time="0.000375"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions não informar senha status code 412" file="./spec/scenarios/post_session_spec.rb" time="0.000172"></testcase>
+<testcase classname="spec.scenarios.post_session_spec" name="POST/sessions não informar senha valida id do usuário" file="./spec/scenarios/post_session_spec.rb" time="0.000201"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions cadastro de usuário com sucesso status code 200" file="./spec/scenarios/signup_sessions_spec.rb" time="0.000158"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions usuário duplicado status code 409" file="./spec/scenarios/signup_sessions_spec.rb" time="0.000249"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions usuário duplicado valida mensagem de erro" file="./spec/scenarios/signup_sessions_spec.rb" time="0.000144"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions usuário duplicado valida erro retornado pela API" file="./spec/scenarios/signup_sessions_spec.rb" time="0.000166"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions não informar dados obrigatórios não informar nome - status code 412" file="./spec/scenarios/signup_sessions_spec.rb" time="0.003604"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions não informar dados obrigatórios não informar email - status code 412" file="./spec/scenarios/signup_sessions_spec.rb" time="0.004940"></testcase>
+<testcase classname="spec.scenarios.signup_sessions_spec" name="signup sessions não informar dados obrigatórios não informar senha - status code 412" file="./spec/scenarios/signup_sessions_spec.rb" time="0.007204"></testcase>
+</testsuite>
