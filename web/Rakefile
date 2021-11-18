@@ -1,0 +1,35 @@
+require 'digest/md5'
+require_relative 'features/support/libs/mongo'
+require 'pry'
+
+def to_md5(pass)
+  return Digest::MD5.hexdigest(pass)
+end
+
+#usado para criar usuário antes da execução do projeto, como se fosse um before global (cucumber não possui)
+task :local_seeds do
+
+    CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/local.yml"))
+
+    users = [
+        { name: "joao", email: "gopalhares2@hotmail.com", password: to_md5("123456") },
+        { name: "maria1", email: "giovana@hotmail.com", password: to_md5("123456") },
+      ]
+      Mongodb.new.drop_table
+      Mongodb.new.insert_users(users)
+
+      sh "cucumber"
+end
+
+task :hmg_seeds do
+
+    CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/hmg.yml"))
+
+    users = [
+        { name: "joao", email: "gopalhares2@hotmail.com", password: to_md5("123456") },
+        { name: "maria1", email: "giovana@hotmail.com", password: to_md5("123456") },
+      ]
+      
+      Mongodb.new.drop_table
+      Mongodb.new.insert_users(users)
+end
