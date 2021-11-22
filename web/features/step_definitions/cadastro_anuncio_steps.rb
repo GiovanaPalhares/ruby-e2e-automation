@@ -5,6 +5,7 @@ Dado('Login com {string} e {string}') do |email, senha|
     @login.password_field.set senha
 
     @login.entrar
+    expect(@dash.on_dash?).to be true
 end
 
 Dado('acesso a página de criar anúncio') do

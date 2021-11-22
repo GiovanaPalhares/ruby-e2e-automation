@@ -14,6 +14,7 @@ task :local_seeds do
     users = [
         { name: "joao", email: "gopalhares2@hotmail.com", password: to_md5("123456") },
         { name: "maria1", email: "giovana@hotmail.com", password: to_md5("123456") },
+        { name: "User excluir anuncio", email: "maria@hotmail.com", password: to_md5("123456") },
       ]
       Mongodb.new.drop_table
       Mongodb.new.insert_users(users)
