@@ -25,4 +25,8 @@ class Dashboard
     def confirmar_exclusao
         click_button "Sim"
     end
+
+    def nao_confirmar_exclusao
+        click_button "Não"
+    end
 end

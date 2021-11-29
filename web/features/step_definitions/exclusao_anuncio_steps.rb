@@ -1,5 +1,4 @@
 Dado('que possuo um anúncio:') do |table|
-
   #script em java script que pega o dado armazenado na variável 'user', no storage do navegador
   user_id = page.execute_script("return localStorage.getItem('user')")
 
@@ -11,12 +10,9 @@ Dado('que possuo um anúncio:') do |table|
   category: table.rows_hash[:categoria],
   price: table.rows_hash[:preco]
 }
-
   Equipos_service.new.create_equipo(@equipo, user_id)
-  #Mongodb.new.remove_equipo(@anuncio[:nome], @email)
-  #@equipamentos.submeter_cadastro_anuncio(@anuncio)
-  visit current_url
 
+  visit current_url #atualiza página pois equipo foi inserido via API e sistema não enxerga atualização
   end
   
   Quando('solicito a exclusão de um anúncio') do
@@ -33,9 +29,9 @@ Dado('que possuo um anúncio:') do |table|
   end
   
   Quando('não confirmo a exclusão') do
-    pending # Write code here that turns the phrase above into concrete actions
+    Dashboard.new.nao_confirmar_exclusao
   end
   
   Então('devo ver o anúncio no Dashboard') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(Dashboard.new.nao_tem_equipo?(@equipo[:name])).to be false
   end
