@@ -5,29 +5,31 @@ Dado('que possuo um anúncio:') do |table|
 
   thumbnail = File.open(File.join(Dir.pwd, "features/support/images", table.rows_hash[:imagem]), "rb")
   
-  equipo = {
+  @equipo = {
   thumbnail: thumbnail,
   name: table.rows_hash[:nome],
   category: table.rows_hash[:categoria],
   price: table.rows_hash[:preco]
 }
 
-  Equipos_service.new.create_equipo(equipo, user_id)
+  Equipos_service.new.create_equipo(@equipo, user_id)
   #Mongodb.new.remove_equipo(@anuncio[:nome], @email)
   #@equipamentos.submeter_cadastro_anuncio(@anuncio)
+  visit current_url
 
   end
   
   Quando('solicito a exclusão de um anúncio') do
-    pending # Write code here that turns the phrase above into concrete actions
+    Dashboard.new.remover_anuncio(@equipo[:name])
   end
   
   Quando('confirmo a exclusão') do
-    pending # Write code here that turns the phrase above into concrete actions
+    Dashboard.new.confirmar_exclusao
   end
   
   Então('não devo mais ver o anúncio no Dashboard') do
-    pending # Write code here that turns the phrase above into concrete actions
+    #expect(page).not_to have_content(@equipamnto)
+    expect(Dashboard.new.nao_tem_equipo?(@equipo[:name])).to be true
   end
   
   Quando('não confirmo a exclusão') do
